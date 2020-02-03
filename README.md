@@ -14,19 +14,20 @@ interested in seeing a live example.
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Table of Contents](#table-of-contents)
-- [Getting Started](#getting-started)
-	- [exampleSite](#examplesite)
-	- [config.toml](#configtoml)
-	- [Hugo's Built-In Server](#hugos-built-in-server)
+- [Hugo Future Imperfect](#hugo-future-imperfect)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [exampleSite](#examplesite)
+    - [config.toml](#configtoml)
+    - [Hugo's Built-In Server](#hugos-built-in-server)
     - [Hugo's website SEO](#hugos-website-seo)
-- [Shortcodes](#shortcodes)
-	- [fancybox](#fancybox)
-	- [img-post](#img-post)
-	- [img-fit](#img-fit)
-	- [url-link](#url-link)
-- [About the Author](#about-the-author)
-- [License](#license)
+  - [Shortcodes](#shortcodes)
+    - [fancybox](#fancybox)
+    - [img-post](#img-post)
+    - [img-fit](#img-fit)
+    - [url-link](#url-link)
+  - [About the Author](#about-the-author)
+  - [License](#license)
 
 <!-- /TOC -->
 
@@ -119,7 +120,7 @@ You will then be able to view your live website at [localhost:1313](http://local
 ### Hugo's website SEO
 
 This theme support SEO elements for your website.
-It was adapted and integrated thanks to the following guide:  
+It was adapted and integrated thanks to the following guide:
 [https://keithpblog.org/post/hugo-website-seo/](https://keithpblog.org/post/hugo-website-seo/)
 
 If you wish to enable SEO on this theme, follow these instructions:
@@ -142,7 +143,7 @@ canonifyURLs = true
     - Submit the sitemap (/sitemap.xml) for indexing
     - Wait
 
-3. Add your website to Bing 
+3. Add your website to Bing
     - Login to the [Bing Webmaster Console](https://www.bing.com/toolbox/webmaster/)
     - Add your site, details and verify
     - From the 3 option, we recommend adding the xml file to you website
