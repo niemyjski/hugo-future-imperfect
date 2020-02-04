@@ -1,0 +1,17 @@
+<div id="disqus_thread"></div>
+
+<script>
+(function() {
+  var disqus_shortname = '{{ .Site.DisqusShortname }}';
+  window.disqusLoaderSettings = {
+    element: '#disqus_thread',
+    options: {
+      scriptUrl: '//' + disqus_shortname + '.disqus.com/embed.js',
+      disqusConfig: function () {
+        this.page.url = "{{ .Site.Params.domain }}{{ .RelPermalink }}";
+        this.page.identifier = "{{ .Site.Params.domain }}{{ .RelPermalink }}";
+      }
+    }
+  };
+})();
+</script>

@@ -29,6 +29,9 @@
       <script src="{{ "js/util.js" | relURL }}"></script>
       <script src="{{ "js/main.js" | relURL }}"></script>
       <script src="{{ "js/backToTop.js" | relURL }}"></script>
+      {{ if ne .Site.Params.DisqusShortname "" }}
+      <script defer async src="{{ "js/disqusLoader.js" | relURL }}"></script>
+      {{ end }}
     {{ end }}
 
     {{ if ne ($.Scratch.Get "jsFiles") false }}
