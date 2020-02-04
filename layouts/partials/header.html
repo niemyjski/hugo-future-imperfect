@@ -4,8 +4,13 @@
     html5up.net | @n33co
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
     <head>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+        <link rel="dns-prefetch" href="https://use.fontawesome.com">
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
         {{ partial "seo_schema" . }}
         {{ with $.Scratch.Get "generalTitle" }}
             <title>{{ . }}</title>
@@ -51,9 +56,8 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700&display=swap">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" />
-            <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
             <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
         {{ end }}
 

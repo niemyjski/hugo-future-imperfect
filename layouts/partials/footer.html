@@ -8,43 +8,43 @@
       {{ $.Scratch.Set "jsFiles" false }}
     {{ end }}
 
+    <!-- If the value "default" is passed into the param then we will first
+     load the standard js files associated with the theme -->
+    {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+      <script defer src="{{ "js/util.js" | relURL }}"></script>
+      <script defer src="{{ "js/main.js" | relURL }}"></script>
+      <script defer src="{{ "js/backToTop.js" | relURL }}"></script>
+      {{ if ne .Site.Params.DisqusShortname "" }}
+      <script defer src="{{ "js/disqusLoader.js" | relURL }}"></script>
+      {{ end }}
+    {{ end }}
+
     {{ if (and (not .Site.Params.disable_highlight) (not .Params.disable_highlight)) }}
         {{ $highVersion := .Site.Params.highlightjsVersion | default "9.18.1" }}
         {{ $highCDN := .Site.Params.highlightjsCDN | default "//cdnjs.cloudflare.com/ajax/libs" }}
-        <script src="{{ $highCDN }}/highlight.js/{{ $highVersion }}/highlight.min.js"></script>
+        <script defer src="{{ $highCDN }}/highlight.js/{{ $highVersion }}/highlight.min.js"></script>
 
         {{ $.Scratch.Set "highLangs" .Site.Params.highlightjsLang }}
         {{ range .Params.highlightjsLang }}{{ $.Scratch.Add "highLangs" . }}{{ end }}
         {{ range ($.Scratch.Get "highLangs") }}
-          <script src="{{ $highCDN }}/highlight.js/{{ $highVersion }}/languages/{{ . }}.min.js"></script>
+          <script defer src="{{ $highCDN }}/highlight.js/{{ $highVersion }}/languages/{{ . }}.min.js"></script>
         {{ end }}
-        <script>hljs.initHighlightingOnLoad();</script>
-    {{ end }}
-
-    <!-- If the value "default" is passed into the param then we will first
-     load the standard js files associated with the theme -->
-    {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-      <script src="{{ "js/util.js" | relURL }}"></script>
-      <script src="{{ "js/main.js" | relURL }}"></script>
-      <script src="{{ "js/backToTop.js" | relURL }}"></script>
-      {{ if ne .Site.Params.DisqusShortname "" }}
-      <script defer async src="{{ "js/disqusLoader.js" | relURL }}"></script>
-      {{ end }}
     {{ end }}
 
     {{ if ne ($.Scratch.Get "jsFiles") false }}
       {{ range $.Scratch.Get "jsFiles" }}
         {{ if ne . "default" }}
-          <script src="{{ . | relURL }}"></script>
+          <script defer src="{{ . | relURL }}"></script>
         {{ end }}
       {{ end }}
     {{ end }}
 
     {{ if (not .Site.Params.disable_highlight) }}
       <!-- This is called by default since this theme uses highlight.js -->
-      <script>hljs.initHighlightingOnLoad();</script>
+      <script defer src="{{ "js/init-highlight.js" | relURL }}"></script>
     {{ end }}
   </body>
 </html>
