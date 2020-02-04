@@ -13,7 +13,7 @@
             {{ range .Site.Menus.main }}
                 <li>
                     <a href="{{ .URL }}">
-                            <i class="{{ .Identifier }}"></i> {{ .Name }}
+                            <i class="{{ .Identifier }}"></i>&nbsp;{{ .Name }}
                     </a>
                 </li>
             {{ end }}
@@ -58,7 +58,7 @@
                     <li>
                         <a href="{{ .URL }}">
                             <h3>
-                                <i class="{{ .Identifier }}"></i> {{ .Name }}
+                                <i class="{{ .Identifier }}"></i>&nbsp;{{ .Name }}
                             </h3>
                         </a>
                     </li>
