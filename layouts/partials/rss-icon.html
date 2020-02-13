@@ -1,5 +1,5 @@
 {{ with .OutputFormats.Get "rss" -}}
-    <li><a href="{{ .RelPermalink }}" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
+    <li><a href="{{ .RelPermalink }}" type="application/rss+xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></li>
 {{ else }}
-    <li><a href="{{ .Site.RSSLink }}" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
+    <li><a href="{{ .Site.RSSLink }}" type="application/rss+xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></li>
 {{ end }}
