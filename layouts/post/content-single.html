@@ -18,6 +18,10 @@
     {{ .Render "footer-category" }}
   </footer>
 
+  <div id="mailing-list">
+    {{ partial "mailing-list" . }}
+  </div>
+
 </article>
 {{ .Render "comments" }}
 {{ .Render "prev-next" }}
