@@ -3,7 +3,7 @@
 <!-- Twitter -->
 {{ if .Site.Params.socialShareTwitter | default true}}
 <li>
-  <a href="//twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Social.twitter }}" target="_blank" rel="noopener" class="share-btn twitter">
+  <a href="//twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Social.twitter }}" target="_blank" rel="noopener" class="share-btn twitter" aria-label="Share To Twitter">
     <i class="fab fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -14,7 +14,7 @@
 {{ if .Site.Params.socialShareFacebook | default true}}
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener" class="share-btn facebook" aria-label="Share To Facebook">
     <i class="fab fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -24,7 +24,7 @@
 <!-- Reddit -->
 {{ if .Site.Params.socialShareReddit | default true}}
 <li>
-  <a href="//reddit.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" rel="noopener" class="share-btn reddit">
+  <a href="//reddit.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" rel="noopener" class="share-btn reddit" aria-label="Share To Reddit">
     <i class="fab fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -34,7 +34,7 @@
 <!-- LinkedIn -->
 {{ if .Site.Params.socialShareLinkedin | default true}}
 <li>
-  <a href="//www.linkedin.com/shareArticle?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" rel="noopener" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" rel="noopener" class="share-btn linkedin" aria-label="Share To LinkedIn">
       <i class="fab fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -44,7 +44,7 @@
 <!-- StumbleUpon -->
 {{ if .Site.Params.socialShareStumbleupon | default true}}
 <li>
-  <a href="//www.stumbleupon.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" rel="noopener" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}" target="_blank" rel="noopener" class="share-btn stumbleupon" aria-label="Share To StumbleUpon">
     <i class="fab fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -54,7 +54,7 @@
 <!-- Pintrest -->
 {{ if .Site.Params.socialSharePinterest | default true}}
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url={{ .Permalink }}&amp;description={{ .Title }}" target="_blank" rel="noopener" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url={{ .Permalink }}&amp;description={{ .Title }}" target="_blank" rel="noopener" class="share-btn pinterest" aria-label="Share To Pinterest">
     <i class="fab fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -64,7 +64,7 @@
 <!-- Email -->
 {{ if .Site.Params.socialShareEmail | default true}}
 <li>
-  <a href="mailto:?subject=Check out this post by {{ .Params.author }}&amp;body={{ .Permalink }}" target="_blank" rel="noopener" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by {{ .Params.author }}&amp;body={{ .Permalink }}" target="_blank" rel="noopener" class="share-btn email" aria-label="Share To Email">
     <i class="fas fa-envelope"></i>
     <p>Email</p>
   </a>
