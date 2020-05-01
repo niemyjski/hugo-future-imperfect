@@ -11,9 +11,9 @@
     <!-- If the value "default" is passed into the param then we will first
      load the standard js files associated with the theme -->
     {{ if or (in ($.Scratch.Get "jsFiles") "default") (eq ($.Scratch.Get "jsFiles") false) }}
-      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
       <script defer src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-      <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
       <script defer src="{{ "js/util.js" | relURL }}"></script>
       <script defer src="{{ "js/main.js" | relURL }}"></script>
       <script defer src="{{ "js/backToTop.js" | relURL }}"></script>
@@ -24,7 +24,7 @@
     {{ end }}
 
     {{ if (and (not .Site.Params.disable_highlight) (not .Params.disable_highlight)) }}
-        {{ $highVersion := .Site.Params.highlightjsVersion | default "9.18.1" }}
+        {{ $highVersion := .Site.Params.highlightjsVersion | default "10.0.1" }}
         {{ $highCDN := .Site.Params.highlightjsCDN | default "//cdnjs.cloudflare.com/ajax/libs" }}
         <script defer src="{{ $highCDN }}/highlight.js/{{ $highVersion }}/highlight.min.js"></script>
 
