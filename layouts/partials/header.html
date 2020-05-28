@@ -6,11 +6,11 @@
 -->
 <html lang="en">
     <head>
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-        <link rel="dns-prefetch" href="https://use.fontawesome.com">
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-        <link rel="dns-prefetch" href="https://www.google-analytics.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+        <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
 
         {{ partial "seo_schema" . }}
         {{ with $.Scratch.Get "generalTitle" }}
@@ -57,7 +57,12 @@
         <!-- If the value "default" is passed into the param then we will first
              load the standard css files associated with the theme -->
         {{ if or (in ($.Scratch.Get "cssFiles") "default") (eq ($.Scratch.Get "cssFiles") false) }}
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700&display=swap">
+            <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700&display=swap">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700&display=swap" media="print" onload="this.media='all'" />
+            <noscript>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700&display=swap" />
+            </noscript>
+
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
             <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
         {{ end }}
@@ -73,13 +78,13 @@
         {{ if (and (not .Site.Params.disable_highlight) (not .Params.disable_highlight)) }}
             {{ $highTheme := .Site.Params.highlightjsTheme | default "github" }}
             {{ $highVersion := .Site.Params.highlightjsVersion | default "9.18.1" }}
-            {{ $highCDN := .Site.Params.highlightjsCDN | default "//cdnjs.cloudflare.com/ajax/libs" }}
+            {{ $highCDN := .Site.Params.highlightjsCDN | default "https://cdnjs.cloudflare.com/ajax/libs" }}
             <link href='{{ $highCDN }}/highlight.js/{{ $highVersion }}/styles/{{ $highTheme }}.min.css' rel='stylesheet' type='text/css' />
         {{ end }}
 
-      {{ template "_internal/google_analytics.html" . }}
+        {{ template "_internal/google_analytics.html" . }}
     </head>
     <body>
 
-      <!-- Wrapper -->
-      <div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
